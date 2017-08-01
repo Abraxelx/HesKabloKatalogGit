@@ -1,0 +1,38 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <string-array name="query_suggestions">
+        <item>Tesisat Kabloları</item>
+        <item>PVC İzoleli Alçak Gerilim Kabloları</item>
+        <item>XLPE İzoleli Alçak Gerilim Kabloları</item>
+        <item>Halojensiz Tesisat Kabloları</item>
+        <item>XLPE İzoleli Halojensiz Alçak Gerilim Kabloları</item>
+        <item>Solar Kablolar","Orta Gerilim Kabloları</item>
+        <item>Yüksek Gerilim Kabloları</item>
+        <item>Alüminyum İletken</item>
+        <item>Aer Kablolar</item>
+        <item>Fiber Optikli Koruma İletkeni(OPGW)</item>
+        <item>Bakır Filmaşin</item>
+        <item>Bakır İletken</item>
+        <item>Alüminyum Filmaşin</item>
+        <item>Teknik Bilgiler</item>
+    </string-array>
+
+
+</resources>

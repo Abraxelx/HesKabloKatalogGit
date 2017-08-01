@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hes_stajyer.heskablokatalog.SendEmail">
+
+
+    <EditText
+        android:id="@+id/et_Mail"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:ems="40"
+        tools:layout_editor_absoluteY="105dp"
+        tools:layout_editor_absoluteX="0dp"
+        android:layout_below="@+id/textView4"
+        android:layout_marginTop="25dp"
+        android:layout_above="@+id/btn_SendEmail"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:inputType="textLongMessage"
+        />
+
+    <EditText
+        android:id="@+id/et_Subject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="40"
+        tools:layout_editor_absoluteY="40dp"
+        tools:layout_editor_absoluteX="0dp"
+        android:layout_marginTop="13dp"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:inputType="textEmailSubject"/>
+
+    <Button
+        android:id="@+id/btn_SendEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GÖNDER"
+        tools:layout_editor_absoluteY="192dp"
+        tools:layout_editor_absoluteX="148dp"
+        android:layout_marginBottom="69dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:ems="20"
+        android:text="KONU :" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/et_Subject"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textSize="15dp"
+        android:ems="20"
+        android:textStyle="bold"
+        android:text="İÇERİK :" />
+
+
+</RelativeLayout>
