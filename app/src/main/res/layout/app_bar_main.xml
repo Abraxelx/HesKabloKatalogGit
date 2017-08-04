@@ -36,7 +36,7 @@
         android:id="@+id/list_item1"
         android:visibility="invisible"
         android:dividerHeight="5dp"
-        android:background="@color/colorAccent">
+        android:background="@color/colorPrimary">
 
     </ListView>
 
