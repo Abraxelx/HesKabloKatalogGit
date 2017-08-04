@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity
          PDFView pdfView;
          ListView listView;
          ArrayAdapter<CharSequence> adapter;
-         String textAtSearch;
 
 
 
@@ -135,7 +134,6 @@ public class MainActivity extends AppCompatActivity
             public boolean onQueryTextChange(String text) {
                 listView.setVisibility(View.VISIBLE);
                 adapter.getFilter().filter(text);
-                textAtSearch = text;
 
 
 
@@ -147,12 +145,26 @@ public class MainActivity extends AppCompatActivity
                 return false;
             }
         });
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapter, View view, int position, long l) {
+
+
+            }
+        });
+
+
+
+
         searchView.setOnSearchClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d("Click","Click");
             }
         });
+
+
 
 
 

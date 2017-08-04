@@ -9,7 +9,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"
-        android:background="#D4CC70"
+        android:background="#DB7F3B"
         android:paddingTop="10dp"
         android:textColor="#fff"
         android:textStyle="bold"

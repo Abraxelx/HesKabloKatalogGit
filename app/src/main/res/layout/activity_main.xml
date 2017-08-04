@@ -13,16 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <ListView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:id="@+id/list_item1"
-        android:visibility="invisible"
-        android:stackFromBottom="true"
-        android:layout_marginStart="@dimen/nav_header_height"
-        android:layout_marginLeft="@dimen/nav_header_height">
 
-    </ListView>
 
 
     <android.support.design.widget.NavigationView

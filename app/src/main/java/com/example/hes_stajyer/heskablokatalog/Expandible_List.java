@@ -45,6 +45,7 @@ public class Expandible_List extends BaseExpandableListAdapter{
         return Categories.get(List.get(groupPosition)).size();
     }
 
+
     @Override
     public Object getGroup(int groupPosition)
     {
