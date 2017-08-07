@@ -23,6 +23,7 @@ public class SendEmail extends AppCompatActivity {
         btn_Send = (Button) findViewById(R.id.btn_SendEmail);
 
 
+
         btn_Send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

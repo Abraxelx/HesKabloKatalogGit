@@ -1,12 +1,17 @@
 package com.example.hes_stajyer.heskablokatalog;
 
+
+
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v4.view.animation.FastOutLinearInInterpolator;
+import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
@@ -32,6 +37,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.github.barteksc.pdfviewer.PDFView;
+import com.github.barteksc.pdfviewer.listener.OnRenderListener;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
 import java.lang.reflect.Array;
@@ -40,8 +46,12 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt;
+
 import static android.widget.Toast.LENGTH_SHORT;
 import static android.widget.Toast.makeText;
+import static uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt.*;
+
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -50,6 +60,12 @@ public class MainActivity extends AppCompatActivity
          PDFView pdfView;
          ListView listView;
          ArrayAdapter<CharSequence> adapter;
+         //Builder tapTarget;
+         MaterialTapTargetPrompt tapTarget1;
+
+
+
+
 
 
 
@@ -60,12 +76,16 @@ public class MainActivity extends AppCompatActivity
 
 
 
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         //PDF LOAD KISMI
         pdfView= (PDFView) findViewById(R.id.pdfView);
         pdfView.fromAsset("Heskatalog.pdf").load();
+        pdfView.setSoundEffectsEnabled(true);
+
+
 
 
 
@@ -79,13 +99,36 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
 
-        Intent intent = new Intent(MainActivity.this, SendEmail.class);
-                startActivity(intent);
+
+
+    //TAP TARGET ANİMASYONU BAŞLANGIÇ
+                tapTarget1 =new MaterialTapTargetPrompt.Builder(MainActivity.this)
+                        .setTarget(R.id.fab)
+                        .setFocalPadding(R.dimen.MaterialTapView)
+                        .setPrimaryText("E-Mail Göndermek İçin Tıklayınız")
+                        .setSecondaryText("Bizimle İletişime Geçmiş İçin Tıklayınız")
+                        .setBackButtonDismissEnabled(true)
+                        .setAnimationInterpolator(new FastOutSlowInInterpolator())
+                        .setPromptStateChangeListener(new MaterialTapTargetPrompt.PromptStateChangeListener()
+                        {
+                            @Override
+                            public void onPromptStateChanged(MaterialTapTargetPrompt prompt, int state)
+                            {
+                                if (state == MaterialTapTargetPrompt.STATE_FOCAL_PRESSED)
+                                {
+                                    Intent intent = new Intent(MainActivity.this, SendEmail.class);
+                                    startActivity(intent);
+                                }
+                            }
+
+                        })
+                        .create();
+                tapTarget1.show();
+
+                //TAP TARGET ANİMASYONU BİTİŞ
 
 
 //BURAYA INTETNT GIR
-
-
 
             }
         });
@@ -111,6 +154,23 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
+    public void onConfigurationChanged(Configuration newConfig)
+    {
+        super.onConfigurationChanged(newConfig);
+        if(newConfig.orientation ==Configuration.ORIENTATION_LANDSCAPE)
+        {
+
+
+        }
+        else if(newConfig.orientation==Configuration.ORIENTATION_PORTRAIT)
+            Log.d("AAAAAAAAAAAAAAAAAAA","AAAAAAAAAAAAAAAAAAAAAAAAAAAAAa");
+        Toast.makeText(this,"ASS",Toast.LENGTH_SHORT).show();
+        pdfView.fitToWidth();
+    }
+
+
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
@@ -118,6 +178,10 @@ public class MainActivity extends AppCompatActivity
         listView = (ListView)findViewById(R.id.list_item1);
        adapter= adapter.createFromResource(this,R.array.query_suggestions,android.R.layout.simple_list_item_1);
         listView.setAdapter(adapter);
+
+
+
+
 
 
         final SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
@@ -146,6 +210,12 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+
+
+
+
+
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, int position, long l) {
@@ -153,6 +223,7 @@ public class MainActivity extends AppCompatActivity
 
             }
         });
+
 
 
 
@@ -166,9 +237,9 @@ public class MainActivity extends AppCompatActivity
 
 
 
-
-
         return true;
+
+
     }
 
 
@@ -198,6 +269,8 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         if (id==R.id.nav_inside)
         {
+
+
             Intent intent = new Intent(this,InsidesActivity.class);
             startActivity(intent);
 
@@ -211,6 +284,4 @@ public class MainActivity extends AppCompatActivity
 
         return true;
     }
-
-
 }
