@@ -6,4 +6,5 @@
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="MaterialTapView">40dp</dimen>
+    <dimen name="toast_vertical_margin">20dp</dimen>
 </resources>

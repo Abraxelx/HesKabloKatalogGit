@@ -1,11 +1,10 @@
 package com.example.hes_stajyer.heskablokatalog;
-
-
-
+import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,6 +18,7 @@ import android.support.v7.widget.ShareActionProvider;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.ActionProvider;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuInflater;
 import android.view.View;
@@ -30,6 +30,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ExpandableListView;
@@ -37,6 +39,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.github.barteksc.pdfviewer.PDFView;
+import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
+import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
 import com.github.barteksc.pdfviewer.listener.OnRenderListener;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
@@ -56,6 +60,8 @@ import static uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt.*
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private final static String KEY_CURRENT_PAGE = "current_page";
+    private int mCurrentPage = 0;
 
          PDFView pdfView;
          ListView listView;
@@ -66,13 +72,31 @@ public class MainActivity extends AppCompatActivity
 
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if(savedInstanceState!=null)
+        {
+            mCurrentPage = savedInstanceState.getInt(KEY_CURRENT_PAGE);
+        }
+        else
+        {
+            mCurrentPage = -1;
+        }
+        if(savedInstanceState==null)
+        {
+
+            //BAŞLANGIÇTAKİ KARŞILAMA MESAJI
+            Toast toast = new Toast(getApplicationContext());
+            View view  = getLayoutInflater().inflate(R.layout.toast_settings,null);
+            toast.setView(view);
+            toast.setDuration(Toast.LENGTH_LONG);
+            int margin = getResources().getDimensionPixelSize(R.dimen.toast_vertical_margin);
+            toast.setGravity(Gravity.BOTTOM|Gravity.CENTER_VERTICAL,0,margin);
+            toast.show();
+        }
+
 
 
 
@@ -82,11 +106,36 @@ public class MainActivity extends AppCompatActivity
 
         //PDF LOAD KISMI
         pdfView= (PDFView) findViewById(R.id.pdfView);
-        pdfView.fromAsset("Heskatalog.pdf").load();
+        pdfView.fromAsset("Heskatalog.pdf")
+                .enableAntialiasing(true)
+                .defaultPage(mCurrentPage)
+                .onRender(new OnRenderListener() {
+            @Override
+            public void onInitiallyRendered(int nbPages, float pageWidth, float pageHeight) {
+                pdfView.fitToWidth(mCurrentPage);
+            }
+        })
+                .onPageChange(new OnPageChangeListener() {
+            @Override
+            public void onPageChanged(int page, int pageCount) {
+
+                mCurrentPage = page;
+
+                setTitle(String.format("%s %s / %s", "Ürün Kataloğu",page+1,pageCount));
+
+            }
+        }).onLoad(new OnLoadCompleteListener() {
+            @Override
+            public void loadComplete(int nbPages) {
+
+                if (mCurrentPage >= 0)
+                {
+                    pdfView.jumpTo(mCurrentPage);
+                }
+            }
+        }).load();
         pdfView.setSoundEffectsEnabled(true);
-
-
-
+        pdfView.setBackgroundColor(Color.LTGRAY);
 
 
 
@@ -106,7 +155,7 @@ public class MainActivity extends AppCompatActivity
                         .setTarget(R.id.fab)
                         .setFocalPadding(R.dimen.MaterialTapView)
                         .setPrimaryText("E-Mail Göndermek İçin Tıklayınız")
-                        .setSecondaryText("Bizimle İletişime Geçmiş İçin Tıklayınız")
+                        .setSecondaryText("Bizimle İletişime Geçmek İçin Tıklayınız")
                         .setBackButtonDismissEnabled(true)
                         .setAnimationInterpolator(new FastOutSlowInInterpolator())
                         .setPromptStateChangeListener(new MaterialTapTargetPrompt.PromptStateChangeListener()
@@ -120,7 +169,6 @@ public class MainActivity extends AppCompatActivity
                                     startActivity(intent);
                                 }
                             }
-
                         })
                         .create();
                 tapTarget1.show();
@@ -128,11 +176,10 @@ public class MainActivity extends AppCompatActivity
                 //TAP TARGET ANİMASYONU BİTİŞ
 
 
-//BURAYA INTETNT GIR
-
             }
         });
 
+        //SOLDAN AÇILAN MENÜ(NAVİGATİON DRAWER)
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -151,21 +198,6 @@ public class MainActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig)
-    {
-        super.onConfigurationChanged(newConfig);
-        if(newConfig.orientation ==Configuration.ORIENTATION_LANDSCAPE)
-        {
-
-
-        }
-        else if(newConfig.orientation==Configuration.ORIENTATION_PORTRAIT)
-            Log.d("AAAAAAAAAAAAAAAAAAA","AAAAAAAAAAAAAAAAAAAAAAAAAAAAAa");
-        Toast.makeText(this,"ASS",Toast.LENGTH_SHORT).show();
-        pdfView.fitToWidth();
     }
 
 
@@ -212,37 +244,145 @@ public class MainActivity extends AppCompatActivity
 
 
 
-
-
-
+        //ARAMADA GİDİLEN SAYFALAR
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapter, View view, int position, long l) {
-
+            public void onItemClick(AdapterView<?> adapter, View view, int position, long l)
+            {
+                view.setSelected(true);
+                if(position==0)
+                {
+                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+                    pdfView.jumpTo(0);
+                    listView.setVisibility(View.GONE);
+                }
+                else if(position==1)
+                {
+                    pdfView.jumpTo(6);
+                    searchView.setIconified(true);
+                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+                    listView.setVisibility(View.GONE);
+                }
+                else if(position==2)
+                {
+                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+                    pdfView.jumpTo(55);
+                    listView.setVisibility(View.GONE);
+                }
+                else if(position==3)
+                {
+                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+                    pdfView.jumpTo(94);
+                    listView.setVisibility(View.GONE);
+                }
+                else if(position==4)
+                {
+                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+                    pdfView.jumpTo(99);
+                    listView.setVisibility(View.GONE);
+                }
+                else if(position==5)
+                {
+                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+                    pdfView.jumpTo(130);
+                }
+                else if(position==6)
+                {
+                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+                    pdfView.jumpTo(132);
+                }
+                else if(position==7)
+                {
+                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+                    pdfView.jumpTo(195);
+                }
+                else if(position==8)
+                {
+                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+                    pdfView.jumpTo(199);
+                }
+                else if(position==9)
+                {
+                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+                    pdfView.jumpTo(207);
+                }
+                else if(position==10)
+                {
+                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+                    pdfView.jumpTo(209);
+                }
+                else if(position==11)
+                {
+                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+                    pdfView.jumpTo(214);
+                }
+                else if(position==12)
+                {
+                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+                    pdfView.jumpTo(216);
+                }
+                else if(position==13)
+                {
+                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+                    pdfView.jumpTo(218);
+                }
+                else if(position==14)
+                {
+                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+                    pdfView.jumpTo(219);
+                }
 
             }
         });
-
-
-
-
-
-        searchView.setOnSearchClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("Click","Click");
-            }
-        });
-
-
 
         return true;
 
-
     }
 
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState)
+    {
+        super.onRestoreInstanceState(savedInstanceState);
+        mCurrentPage = savedInstanceState.getInt(KEY_CURRENT_PAGE);
 
+    }
+    @Override
+    public void onSaveInstanceState(Bundle outState)
+    {
+        super.onSaveInstanceState(outState);
+        outState.putInt(KEY_CURRENT_PAGE, mCurrentPage);
+    }
 
 
     @Override
