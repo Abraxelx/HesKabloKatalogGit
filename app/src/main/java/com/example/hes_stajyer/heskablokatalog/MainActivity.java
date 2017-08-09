@@ -250,41 +250,36 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, int position, long l)
             {
+                int k = listView.getSelectedItemPosition();
+                String selecteditem = adapter.getItemAtPosition(position).toString();
                 view.setSelected(true);
-                if(position==0)
+
+                if(selecteditem.equals("Tesisat Kabloları"))//TESİSAT KABLOLARI
                 {
                     getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
                     InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
                     imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
-                    pdfView.jumpTo(0);
-                    listView.setVisibility(View.GONE);
-                }
-                else if(position==1)
-                {
                     pdfView.jumpTo(6);
+                    listView.setVisibility(View.INVISIBLE);
+                }
+                if("PVC İzoleli Alçak Gerilim Kabloları".equals(selecteditem))
+                {
+                    pdfView.jumpTo(11);
                     searchView.setIconified(true);
                     getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
                     InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
                     imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
                     listView.setVisibility(View.GONE);
                 }
-                else if(position==2)
+                 if(selecteditem.equals("XLPE İzoleli Alçak Gerilim Kabloları"))
                 {
                     getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
                     InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
                     imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
-                    pdfView.jumpTo(55);
-                    listView.setVisibility(View.GONE);
+                    pdfView.jumpTo(60);
+                    listView.setVisibility(View.INVISIBLE);
                 }
-                else if(position==3)
-                {
-                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-                    InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
-                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
-                    pdfView.jumpTo(94);
-                    listView.setVisibility(View.GONE);
-                }
-                else if(position==4)
+                if("Halojensiz Tesisat Kabloları".equals(selecteditem))
                 {
                     getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
                     InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
@@ -292,75 +287,94 @@ public class MainActivity extends AppCompatActivity
                     pdfView.jumpTo(99);
                     listView.setVisibility(View.GONE);
                 }
-                else if(position==5)
+                 if("XLPE İzoleli Halojensiz Alçak Gerilim Kabloları".equals(selecteditem))
                 {
                     getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
                     InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
                     imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
-                    pdfView.jumpTo(130);
+                    pdfView.jumpTo(104);
+                    listView.setVisibility(View.INVISIBLE);
                 }
-                else if(position==6)
+                 if("Solar Kablolar".equals(selecteditem))
                 {
                     getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
                     InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
                     imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
-                    pdfView.jumpTo(132);
+                    pdfView.jumpTo(135);
+                    listView.setVisibility(View.INVISIBLE);
                 }
-                else if(position==7)
+                 if("Orta Gerilim Kabloları".equals(selecteditem))
                 {
                     getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
                     InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
                     imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
-                    pdfView.jumpTo(195);
+                    pdfView.jumpTo(137);
+                    listView.setVisibility(View.INVISIBLE);
                 }
-                else if(position==8)
+                 if("Yüksek Gerilim Kabloları".equals(selecteditem))
+                {
+                    pdfView.jumpTo(200);
+                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+                    listView.setVisibility(View.INVISIBLE);
+
+                }
+                 if("Alüminyum İletken".equals(selecteditem))
                 {
                     getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
                     InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
                     imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
-                    pdfView.jumpTo(199);
+                    pdfView.jumpTo(204);
+                    listView.setVisibility(View.INVISIBLE);
                 }
-                else if(position==9)
+                 if("Aer Kablolar".equals(selecteditem))
                 {
-                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+                    pdfView.jumpTo(212);
+                    //getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
                     InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
                     imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
-                    pdfView.jumpTo(207);
+                    listView.setVisibility(View.INVISIBLE);
                 }
-                else if(position==10)
-                {
-                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-                    InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
-                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
-                    pdfView.jumpTo(209);
-                }
-                else if(position==11)
+                 if("Fiber Optikli Koruma İletkeni(OPGW)".equals(selecteditem))
                 {
                     getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
                     InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
                     imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
                     pdfView.jumpTo(214);
+                    listView.setVisibility(View.INVISIBLE);
                 }
-                else if(position==12)
-                {
-                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-                    InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
-                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
-                    pdfView.jumpTo(216);
-                }
-                else if(position==13)
-                {
-                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-                    InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
-                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
-                    pdfView.jumpTo(218);
-                }
-                else if(position==14)
+                 if("Bakır Filmaşin".equals(selecteditem))
                 {
                     getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
                     InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
                     imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
                     pdfView.jumpTo(219);
+                    listView.setVisibility(View.INVISIBLE);
+                }
+                 if("Bakır İletken".equals(selecteditem))
+                {
+                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+                    pdfView.jumpTo(221);
+                    listView.setVisibility(View.INVISIBLE);
+                }
+                 if("Alüminyum Filmaşin".equals(selecteditem))
+                {
+                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+                    pdfView.jumpTo(223);
+                    listView.setVisibility(View.INVISIBLE);
+                }
+                 if("Teknik Bilgiler".equals(selecteditem))
+                {
+                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+                    pdfView.jumpTo(224);
+                    listView.setVisibility(View.INVISIBLE);
                 }
 
             }

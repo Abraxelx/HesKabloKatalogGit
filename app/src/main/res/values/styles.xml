@@ -19,11 +19,12 @@
 
     <string-array name="query_suggestions">
         <item>Tesisat Kabloları</item>
-        <item><FONT COLOR ="#fff">PVC İzoleli Alçak Gerilim Kabloları</FONT></item>
+        <item>PVC İzoleli Alçak Gerilim Kabloları</item>
         <item>XLPE İzoleli Alçak Gerilim Kabloları</item>
         <item>Halojensiz Tesisat Kabloları</item>
         <item>XLPE İzoleli Halojensiz Alçak Gerilim Kabloları</item>
-        <item>Solar Kablolar","Orta Gerilim Kabloları</item>
+        <item>Solar Kablolar</item>
+        <item>Orta Gerilim Kabloları</item>
         <item>Yüksek Gerilim Kabloları</item>
         <item>Alüminyum İletken</item>
         <item>Aer Kablolar</item>
