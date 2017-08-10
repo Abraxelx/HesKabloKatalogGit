@@ -66,8 +66,8 @@ public class MainActivity extends AppCompatActivity
          PDFView pdfView;
          ListView listView;
          ArrayAdapter<CharSequence> adapter;
-         //Builder tapTarget;
          MaterialTapTargetPrompt tapTarget1;
+
 
 
 
@@ -96,6 +96,9 @@ public class MainActivity extends AppCompatActivity
             toast.setGravity(Gravity.BOTTOM|Gravity.CENTER_VERTICAL,0,margin);
             toast.show();
         }
+
+
+
 
 
 

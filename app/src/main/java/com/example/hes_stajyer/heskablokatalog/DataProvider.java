@@ -5,7 +5,10 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Hes_Stajyer on 28.07.2017.
@@ -17,13 +20,13 @@ public class DataProvider
     {
         HashMap<String, List<String>> Details = new HashMap<String, List<String>>();
 
+
+
         //TESİSAT KABLOLARI ALANI
         List<String>One_Items = new ArrayList<String>();
         One_Items.add("PVC İzoleli, kılıfsız, tek damarlı, bakır iletkenli kablolar");
         One_Items.add("PVC İzoleli, kılıfsız, çok damarlı, bakır iletkenli tesisat kabloları");
         One_Items.add("PVC İzoleli, yassı bükülgen, bakır iletkenli kablolar");
-        Details.put("01. TESİSAT KABLOLARI",One_Items);
-
 
 
 
@@ -53,7 +56,7 @@ public class DataProvider
         Second_Items.add("0.6/1 kV PVC izoleli, yuvarlak çelik tel zırhlı, çok damarlı, alüminyum iletkenli kablolar");
         Second_Items.add("0.6/1 kV PVC izoleli, yassı çelik tel zırhlı, çok damarlı alüminyum iletkenli kablolar");
         Second_Items.add("0.6/1 kV PVC izoleli, çift kat çelik bant zırhlı, çok damarlı, alüminyum iletkenli kablolar");
-        Details.put("02. PVC İZOLELİ ALÇAK GERİLİM KABLOLARI", Second_Items);
+
 
 
         //XLPE İZOLELİALÇAK GERİLİM KABLOLARI ALANI
@@ -264,10 +267,13 @@ public class DataProvider
 
 
 
-
-       // Details.put("01. TESİSAT KABLOLARI",One_Items);
-       // Details.put("02. PVC İZOLELİ ALÇAK GERİLİM KABLOLARI", Second_Items);
-        Details.put("03. XLPE İZOLELİ ALÇAK GERİLİM KABLOLARI",Third_Items);
+        ArrayList<String> titles=new ArrayList<String>();
+        titles.add("01. TESİSAT KABLOLARI");
+        titles.add("02. PVC İZOLELİ ALÇAK GERİLİM KABLOLARI");
+        titles.add("03. XLPE İZOLELİ ALÇAK GERİLİM KABLOLARI");
+        Details.put(titles.get(0),One_Items);
+        Details.put(titles.get(1), Second_Items);
+        Details.put(titles.get(2),Third_Items);
         Details.put("04. HALOJENSİZ TESİSAT KABLOLARI",Four_Items);
         Details.put("05. XLPE İZOLELİ HALOJENSİZ ALÇAK GERİLİM KABLOLARI",Five_Items);
         Details.put("06. SOLAR KABLOLAR",Six_Items);
