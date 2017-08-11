@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity
         //PDF LOAD KISMI
         pdfView= (PDFView) findViewById(R.id.pdfView);
         pdfView.fromAsset("Heskatalog.pdf")
-                .enableAntialiasing(true)
+                //.enableAntialiasing(true)
                 .defaultPage(mCurrentPage)
                 .onRender(new OnRenderListener() {
             @Override
@@ -137,8 +137,8 @@ public class MainActivity extends AppCompatActivity
                 }
             }
         }).load();
-        pdfView.setSoundEffectsEnabled(true);
-        pdfView.setBackgroundColor(Color.LTGRAY);
+       // pdfView.setSoundEffectsEnabled(true);
+        pdfView.setBackgroundColor(Color.rgb(255,240,245));
 
 
 
