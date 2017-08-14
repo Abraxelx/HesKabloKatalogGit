@@ -31,7 +31,7 @@ public class InsidesActivity extends AppCompatActivity {
     Expandible_List ExpListClass;
     Toolbar tb;
     int lastPosition = -1;
-
+public static int jump;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +57,6 @@ public class InsidesActivity extends AppCompatActivity {
             expandableListView.setAdapter(ExpListClass);
 
 
-
             expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
                 @Override
                 public void onGroupExpand(int i) {
@@ -68,13 +67,14 @@ public class InsidesActivity extends AppCompatActivity {
                 }
             });
 
-
+//CHILD POSITIONS
             expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
                 @Override
                 public boolean onChildClick(ExpandableListView expandableListView, View view, int group_position, int child_position, long id)
                 {
                     //Child Click Event
-                    Toast.makeText(InsidesActivity.this,List_Items.get(group_position),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(InsidesActivity.this, group_position + " clicked "
+                            + child_position,Toast.LENGTH_SHORT).show();
                     return false;
                 }
             });
