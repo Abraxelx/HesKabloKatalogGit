@@ -34,9 +34,6 @@ public class DataProvider
 
         //PVC İZOLELİ ALÇAK GERİLİM KABLOLARI ALANI
         List<String>Second_Items = new ArrayList<String>();
-        Second_Items.add("PVC izoleli, kılıfsız, tek damarlı, bakır iletkenli kablolar ");
-        Second_Items.add("PVC izoleli, çok damarlı, bakır iletkenli, tesisat kabloları ");
-        Second_Items.add("PVC izoleli, yassı bükülgen, bakır iletkenli kablolar");
         Second_Items.add("0.6/1 kV PVC izoleli, tek damarlı, bakır iletkenli kablolar");
         Second_Items.add("0.6/1 kV PVC izoleli, çok damarlı, bakır iletkenli kablolar ");
         Second_Items.add("0.6/1 kV PVC izoleli, bakır iletkenli, kumanda kabloları");
@@ -256,7 +253,7 @@ public class DataProvider
 
         //TEKNİK BİLGİLER BÖLÜMÜ
         List<String>Sixteen_Items = new ArrayList<>();
-        //Sixteen_Items.add("Teknik Bilgiler");
+        Sixteen_Items.add("Teknik Bilgiler");
 
 
 

@@ -95,9 +95,22 @@ public class MainActivity extends AppCompatActivity
             int margin = getResources().getDimensionPixelSize(R.dimen.toast_vertical_margin);
             toast.setGravity(Gravity.BOTTOM|Gravity.CENTER_VERTICAL,0,margin);
             toast.show();
+
+
+            Bundle bnd = getIntent().getExtras();
+            if(bnd != null)
+            {
+                mCurrentPage= bnd.getInt("page");
+                //mCurrentPage = bnd.getInt("page1");
+                //mCurrentPage = bnd.getInt("page2");
+
+            }
+
+
+
+
+
         }
-
-
 
 
 
