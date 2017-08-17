@@ -728,7 +728,6 @@ public class InsidesActivity extends AppCompatActivity {
 
                     }//BAKIR İLETKEN BİTİŞ
 
-
                     //ALÜMİNYUM FİLMAŞİN BAŞLANGIÇ
                     else if(group_position==13)
                     {
