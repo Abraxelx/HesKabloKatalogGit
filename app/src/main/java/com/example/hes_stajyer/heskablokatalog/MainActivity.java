@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity
 
     private final static String KEY_CURRENT_PAGE = "current_page";
     private int mCurrentPage = 0;
+    public static int counter=0;
 
          PDFView pdfView;
          ListView listView;
@@ -87,14 +88,19 @@ public class MainActivity extends AppCompatActivity
         if(savedInstanceState==null)
         {
 
-            //BAŞLANGIÇTAKİ KARŞILAMA MESAJI
-            Toast toast = new Toast(getApplicationContext());
-            View view  = getLayoutInflater().inflate(R.layout.toast_settings,null);
-            toast.setView(view);
-            toast.setDuration(Toast.LENGTH_LONG);
-            int margin = getResources().getDimensionPixelSize(R.dimen.toast_vertical_margin);
-            toast.setGravity(Gravity.BOTTOM|Gravity.CENTER_VERTICAL,0,margin);
-            toast.show();
+            if(counter==0)
+            {
+
+                //BAŞLANGIÇTAKİ KARŞILAMA MESAJI
+                Toast toast = new Toast(getApplicationContext());
+                View view = getLayoutInflater().inflate(R.layout.toast_settings, null);
+                toast.setView(view);
+                toast.setDuration(Toast.LENGTH_LONG);
+                int margin = getResources().getDimensionPixelSize(R.dimen.toast_vertical_margin);
+                toast.setGravity(Gravity.CENTER | Gravity.CENTER_VERTICAL, 0, margin);
+                toast.show();
+                counter++;
+            }
 
 
             Bundle bnd = getIntent().getExtras();
