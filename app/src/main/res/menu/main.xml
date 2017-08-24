@@ -5,6 +5,12 @@
 
 
     <item
+        android:id="@+id/action_gotopage"
+        android:icon="@drawable/ic_refresh_black_24dp"
+        app:showAsAction="ifRoom"
+        android:title="" />
+
+    <item
         android:id="@+id/action_search"
         android:enabled="true"
         android:icon="@drawable/ic_search"
@@ -12,6 +18,7 @@
         android:title="@android:string/search_go"
         app:actionViewClass="android.support.v7.widget.SearchView"
         app:showAsAction="ifRoom" />
+
 
 
 

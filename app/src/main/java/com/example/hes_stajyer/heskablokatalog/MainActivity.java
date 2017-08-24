@@ -34,7 +34,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ExpandableListView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity
     private int mCurrentPage = 0;
     public static int counter=0;
 
+
          PDFView pdfView;
          ListView listView;
          ArrayAdapter<CharSequence> adapter;
@@ -80,17 +81,18 @@ public class MainActivity extends AppCompatActivity
         if(savedInstanceState!=null)
         {
             mCurrentPage = savedInstanceState.getInt(KEY_CURRENT_PAGE);
+
         }
         else
         {
             mCurrentPage = -1;
+
         }
         if(savedInstanceState==null)
         {
 
             if(counter==0)
             {
-
                 //BAŞLANGIÇTAKİ KARŞILAMA MESAJI
                 Toast toast = new Toast(getApplicationContext());
                 View view = getLayoutInflater().inflate(R.layout.toast_settings, null);
@@ -99,7 +101,9 @@ public class MainActivity extends AppCompatActivity
                 int margin = getResources().getDimensionPixelSize(R.dimen.toast_vertical_margin);
                 toast.setGravity(Gravity.CENTER | Gravity.CENTER_VERTICAL, 0, margin);
                 toast.show();
+
                 counter++;
+
             }
 
 
@@ -107,14 +111,8 @@ public class MainActivity extends AppCompatActivity
             if(bnd != null)
             {
                 mCurrentPage= bnd.getInt("page");
-                //mCurrentPage = bnd.getInt("page1");
-                //mCurrentPage = bnd.getInt("page2");
 
             }
-
-
-
-
 
         }
 
@@ -427,14 +425,21 @@ public class MainActivity extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        switch (item.getItemId())
+        {
+            case R.id.action_gotopage:
+                pdfView.jumpTo(0);
+                return true;
+            case R.id.search_layout:
+                return true;
+            default:
+            return super.onOptionsItemSelected(item);
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.search_layout) {
-            //Toast.makeText(this,"Selam",Toast.LENGTH_SHORT).show();
-            return true;
         }
 
-        return super.onOptionsItemSelected(item);
+
+
+
     }
 
     @SuppressWarnings("StatementWithEmptyBody")

@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SendEmail" />
-        <activity android:name=".InsidesActivity"></activity>
+        <activity android:name=".InsidesActivity" />
     </application>
 
 </manifest>

@@ -222,7 +222,7 @@ public class DataProvider
         Eleven_Items.add("Fiber optikli koruma iletkeni (OPGW-95)");
         Eleven_Items.add("Fiber optikli koruma iletkeni (OPGW- 127-1)");
         Eleven_Items.add("Fiber optikli koruma iletkeni (OPGW-127-2)");
-        Eleven_Items.add("Fiber optikli koruma iletkeni (OPGW)");
+        Eleven_Items.add("Fiber optikli koruma iletkeni Özellikler (OPGW)");
 
 
 

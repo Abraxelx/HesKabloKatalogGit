@@ -13,6 +13,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
@@ -33,6 +34,193 @@
         <item>Bakır İletken</item>
         <item>Alüminyum Filmaşin</item>
         <item>Teknik Bilgiler</item>
+    </string-array>
+
+    <string-array name="insides_suggetions">
+        <item>Tesisat Kabloları</item>
+        <item>PVC İzoleli, kılıfsız, tek damarlı, bakır iletkenli kablolar</item>
+        <item>PVC İzoleli, kılıfsız, çok damarlı, bakır iletkenli tesisat kabloları</item>
+        <item>PVC İzoleli, yassı bükülgen, bakır iletkenli kablolar</item>
+        <!--  FIRST -->
+
+        <item>PVC İzoleli Alçak Gerilim Kabloları</item>
+        <item>0.6/1 kV PVC izoleli, tek damarlı, bakır iletkenli kablolar</item>
+        <item>0.6/1 kV PVC izoleli, çok damarlı, bakır iletkenli kablolar</item>
+        <item>0.6/1 kV PVC izoleli, bakır iletkenli, kumanda kabloları</item>
+        <item>0.6/1 kV PVC izoleli, konsantrik iletkenli, tek damarlı, bakır iletkenli kablolar</item>
+        <item>0.6/1 kV PVC izoleli, konsantrik iletkenli, çok damarlı, bakır iletkenli kablolar</item>
+        <item>0.6/1 kV PVC izoleli, konsantrik iletkenli, bakır iletkenli, kumanda kabloları</item>
+        <item>0.6/1 kV PVC izoleli, yuvarlak çelik tel zırhlı, tek damarlı, bakır iletkenli kablolar</item>
+        <item>0.6/1 kV PVC izoleli, yuvarlak çelik tel zırhlı, çok damarlı, bakır iletkenli kablolar</item>
+        <item>0.6/1 kV PVC izoleli, yuvarlak çelik tel zırhlı, bakır iletkenli kumanda kabloları</item>
+        <item>0.6/1 kV PVC izoleli, yassı çelik tel zırhlı, çok damarlı, bakır iletkenli kablolar</item>
+        <item>0.6/1 kV PVC izoleli, çift kat çelik bant zırhlı, çok damarlı, bakır iletkenli kablolar</item>
+        <item>0.6/1 kV PVC izoleli, tek damarlı, alüminyum iletkenli kablolar</item>
+        <item>0.6/1 kV PVC izoleli, çok damarlı, alüminyum iletkenli kablolar</item>
+        <item>0.6/1 kV PVC izoleli, konsantrik iletkenli, tek damarlı,alüminyum iletkenli kablolar</item>
+        <item>0.6/1 kV PVC izoleli, konsantrik iletkenli, çok damarlı, alüminyum iletkenli kablolar</item>
+        <item>0.6/1 kV PVC izoleli, yuvarlak çelik tel zırhlı, tek damarlı, alüminyum iletkenli kablolar</item>
+        <item>0.6/1 kV PVC izoleli, yuvarlak çelik tel zırhlı, çok damarlı, alüminyum iletkenli kablolar</item>
+        <item>0.6/1 kV PVC izoleli, yassı çelik tel zırhlı, çok damarlı alüminyum iletkenli kablolar</item>
+        <item>0.6/1 kV PVC izoleli, çift kat çelik bant zırhlı, çok damarlı, alüminyum iletkenli kablolar</item>
+        <!-- SECOND -->
+
+
+        <item>XLPE İzoleli Alçak Gerilim Kabloları</item>
+        <item>0.6/1 kV XLPE izoleli, tek damarlı, bakır iletkenli kablolar</item>
+        <item>0.6/1 kV XLPE izoleli, çok damarlı, bakır iletkenli kablolar</item>
+        <item>0.6/1 kV XLPE izoleli, bakır iletkenli kumanda kabloları</item>
+        <item>0.6/1 kV XLPE izoleli, konsantrik iletkenli, tek damarlı, bakır iletkkenli kablolar</item>
+        <item>0.6/1 kV XLPE izoleli, konsantrik iletkenli, çok damarlı, bakır iletkenli kablolar</item>
+        <item>0.6/1 kV XLPE izoleli, konsantrik İletkenli, bakır iletkenli kumanda kabloları</item>
+        <item>0.6/1 kV XLPE izoleli, yuvarlak çelik tel zırhlı, çok damarlı, bakır iletkenli kablolar</item>
+        <item>0.6/1 kV XLPE izoleli, yuvarlak çelik tel zırhlı, bakır iletkenli kumanda kabloları</item>
+        <item>0.6/1 kV XLPE izoleli, yassı çelik tel zırhlı, çok damarlı, bakır iletkenli kablolar</item>
+        <item>0.6/1 kV XLPE izoleli, çift kat çelik bant zırhlı, çok damarlı, bakır iletkenli kablolar</item>
+        <item>0.6/1 kV XLPE izoleli, tek damarlı, alüminyum iletkenli kablolar</item>
+        <item>0.6/1 kV XLPE izoleli, çok damarlı, alüminyum iletkenli kablolar</item>
+        <item>0.6/1 kV XLPE izoleli, konsantrik iletkenli, tek damarlı, alüminyum iletkenli kablolar</item>
+        <item>0.6/1 kV XLPE izoleli, konsantrik iletkenli, çok damarlı, alüminyum iletkenli kablolar</item>
+        <item>0.6/1 kV XLPE izoleli, yuvarlak çelik tel zırhlı, tek damarlı, alüminyum iletkenli kablolar</item>
+        <item>0.6/1 kV XLPE izoleli, yuvarlak çelik tel zırhlı, çok damarlı, alüminyum iletkenli kablolar</item>
+        <item>0.6/1 kV XLPE izoleli, çift kat çelik bant zırhlı, çok damarlı, alüminyum iletkenli kablolar</item>
+        <item>0.6/1 kV XLPE izoleli, yassı çelik tel zırhlı, çok damarlı, alüminyum İletkenli kablolar</item>
+
+        <!-- THIRD -->
+        <item>Halojensiz Tesisat Kabloları</item>
+        <item>300/500V ve 450/750V halojensiz, alev iletmeyen, tek damarlı, bakır iletkenli kablolar</item>
+        <item>300/500V ve 450/750V halojensiz, alev iletmeyen, tek damarlı, bükülgen bakır iletkenli kablolar</item>
+        <item>300/500V halojensiz, alev iletmeyen XLPE izoleli, çok damarlı, bakır iletkenli kablolar</item>
+        <item>300/300V ve 300/500V halojensiz, alev iletmeyen, çok damarlı, bükülgen bakır iletkenli kablolar</item>
+
+
+        <!--FOURTH -->
+        <item>XLPE İzoleli Halojensiz Alçak Gerilim Kabloları</item>
+        <item>0.6/1 kV halojensiz, alev iletmeyen, XLPE izoleli, tek damarlı, bakır iletkenli kablolar</item>
+        <item>0.6/1 kV halojensiz, alev iletmeyen XLPE izoleli, çok damarlı, bakır iletkenli kablolar</item>
+        <item>0.6/1 kV halojensiz, alev iletmeyen, XLPE izoleli, bakır iletkenli kumanda kabloları</item>
+        <item>0.6/1 kV halojensiz, alev iletmeyen, XLPE izoleli, yassı çelik tel zırhlı, çok damarlı, bakır iletkenli kablolar</item>
+        <item>0.6/1 kV halojensiz, alev iletmeyen, XLPE izoleli, yuvarlak çelik tel zırhlı, tek damarlı, bakır iletkenli kablolar</item>
+        <item>0.6/1 kV halojensiz, alev iletmeyen, XLPE izoleli, yuvarlak çelik tel zırhlı, çok damarlı, bakır iletkenli kablolar</item>
+        <item>0.6/1 kV halojensiz, alev iletmeyen, konsantrik iletkenli, XLPE izoleli, çok damarlı, bakır iletkenli kablolar</item>
+        <item>0.6/1 kV halojensiz, alev iletmeyen, konsantrik iletkenli, XLPE izoleli, çok damarlı bakır iletkenli kumanda kabloları</item>
+        <item>0.6/1 kV halojensiz, alev iletmeyen, XLPE izoleli, tek damarlı, alüminyum iletkenli kablolar</item>
+        <item>300/500V halojensiz, alev iletmeyen XLPE izoleli, çok damarlı, bakır iletkenli FE 180 kablolar</item>
+        <item>0.6/1 kV halojensiz, alev iletmeyen, XLPE izoleli, tek damarlı, bakır iletkenli FE 180 kablolar</item>
+
+        <!-- FIFTH -->
+        <item>Solar Kablolar</item>
+        <item>0.6/1 kV LSFOH izoleli, tek damarlı, solar kablolar</item>
+
+        <!-- SIXTH -->
+
+        <item>Orta Gerilim Kabloları</item>
+        <item>3.6/6 kV XLPE izoleli, tek damarlı, bakır iletkenli kablolar</item>
+        <item>5.8/10 kV (6/10 kV) veya 6.35/11 kV XLPE izoleli, tek damarlı, bakır iletkenli kablolar</item>
+        <item>8.7/15 kV XLPE izoleli, tek damarlı, bakır iletkenli kablolar</item>
+        <item>20.3/35 kV veya 20.8/36 kV XLPE izoleli, tek damarlı, bakır iletkenli kablolar</item>
+        <item>3.6/6 kV XLPE izoleli, tek damarlı, boylamasına su geçirmez, bakır iletkenli kablolar</item>
+        <item>5.8/10 kV (6/10 kV) veya 6.35/11 kV XLPE izoleli, tek damarlı, boylamasına su geçirmez, bakır iletkenli kablolar </item>
+        <item>8.7/15 kV XLPE izoleli, tek damarlı, boylamasına su geçirmez, bakır iletkenli kablolar</item>
+        <item>20.3/35 kV veya 20.8/36 kV XLPE izoleli, tek damarlı, boylamasına su geçirmez, bakır iletkenli kablolar</item>
+        <item>3.6/6 kV XLPE izoleli, tek damarlı, enlemesine ve boylamasına su geçirmez, bakır iletkenli kablolar</item>
+        <item>5.8/10 kV (6/10 kV) veya 6.35/11 kV XLPE izoleli, tek damarlı, enlemesine ve boylamasına su geçirmez, bakır iletkenli kablolar</item>
+        <item>8.7/15 kV XLPE izoleli, tek damarlı, enlemesine ve boylamasına su geçirmez, bakır iletkenli kablolar</item>
+        <item>20.3/35 kV veya 20.8/36 kV XLPE izoleli, tek damarlı, enlemesine ve boylamasına su geçirmez, bakır iletkenli kablolar</item>
+        <item>3.6/6 kV XLPE izoleli,tek damarlı, yuvarlak alüminyum tel zırhlı, bakır iletkenli kablolar</item>
+        <item>5.8/10 kV (6/10 kV) XLPE izoleli, tek damarlı, yuvarlak alüminyum tel zırhlı, bakır iletkenli kablolar</item>
+        <item>8.7/15 kV XLPE izoleli, tek damarlı, yuvarlak alüminyum tel zırhlı, bakır iletkenli kablolar</item>
+        <item>20.3/35 kV veya 20.8/36 kV XLPE izoleli, tek damarlı, yuvarlak alüminyum tel zırhlı, bakır iletkenli kablolar</item>
+        <item>3.6/6 kV XLPE izoleli, üç damarlı, bakır iletkenli kablolar</item>
+        <item>5.8/10 kV (6/10 kV) veya 6.35/11 kV XLPE izoleli, üç damarlı, bakır iletkenli kablolar</item>
+        <item>8.7/15 kV XLPE izoleli, üç damarlı, bakır iletkenli kablolar</item>
+        <item>20.3/35 kV veya 20.8/36 kV XLPE izoleli, üç damarlı, bakır iletkenli kablolar</item>
+        <item>3.6/6 kV XLPE izoleli, yassı çelik tel zırhlı,üç damarlı, bakır iletkenli kablolar</item>
+        <item>5.8/10 kV (6/10 kV) XLPE izoleli, yassı çelik tel zırhlı, üç damarlı, bakır iletkenli kablolar</item>
+        <item>8.7/15 kV XLPE izoleli, yassı çelik tel zırhlı, üç damarlı, bakır iletkenli kablolar </item>
+        <item>20.3/35 kV veya 20.8/36 kV XLPE izoleli, yassı çelik tel zırhlı, üç damarlı, bakır iletkenli kablolar </item>
+        <item>3.6/6 kV XLPE izoleli, yuvarlak çelik tel zırhlı, üç damarlı, bakır iletkenli kablolar</item>
+        <item>5.8/10 kV (6/10 kV) veya 6.35/11 kV XLPE izoleli, yuvarlak çelik tel zırhlı, üç damarlı, bakır iletkenli kablolar</item>
+        <item>8.7/15 kV XLPE izoleli, yuvarlak çelik tel zırhlı, üç damarlı, bakır iletkenli kablolar</item>
+        <item>20.3/35 kV veya 20.8/36 kV XLPE izoleli, yuvarlak çelik tel zırhlı, üç damarlı, bakır iletkenli kablolar</item>
+        <item>3.6/6 kV XLPE izoleli, çift kat çelik bant zırhlı, üç damarlı, bakır iletkenli kablolar</item>
+        <item>5.8/10 kV (6/10 kV) veya 6.35/11 kV XLPE izoleli, çift kat çelik bant zırhlı, üç damarlı, bakır iletkenli kablolar</item>
+        <item>8.7/15 kV XLPE izoleli, çift kat çelik bant zırhlı, üç damarlı, bakır iletkenli kablolar</item>
+        <item>20.3/35 kV veya 20.8/36 kV XLPE izoleli, çift kat çelik bant zırhlı, üç damarlı, bakır iletkenli kablolar</item>
+        <item>3.6/6 kV XLPE izoleli, tek damarlı, alüminyum iletkenli kablolar</item>
+        <item>5.8/10 kV (6/10 kV) veya 6.35/11 kV XLPE izoleli, tek damarlı, alüminyum iletkenli kablolar</item>
+        <item>8.7/15 kV XLPE izoleli, tek damarlı, alüminyum iletkenli kablolar</item>
+        <item>20.3/35 kV veya 20.8/36 kV XLPE izoleli, tek damarlı, alüminyum iletkenli kablolar</item>
+        <item>3.6/6 kV XLPE izoleli, tek damarlı, boylamasına su geçirmez, alüminyum iletkenli kablolar</item>
+        <item>5.8/10 kV (6/10 kV) veya 6.35/11 XLPE izoleli, tek damarlı, boylamasına su geçirmez, alüminyum iletkenli kablolar</item>
+        <item>8.7/15 kV XLPE izoleli, tek damarlı, boylamasına su geçirmez, alüminyum iletkenli kablolar</item>
+        <item>20.3/35 kV veya 20.8/36 kV XLPE izoleli, tek damarlı, boylamasına su geçirmez, alüminyum iletkenli kablolar</item>
+        <item>3.6/6 kV XLPE izoleli, tek damarlı, enlemesine ve boylamasına su geçirmez, alüminyum iletkenli kablolar</item>
+        <item>5.8/10 kV (6/10 kV) veya 6.35/11 kV XLPE izoleli, tek damarlı, enlemesine ve boylamasına su geçirmez, alüminyum iletkenli kablolar</item>
+        <item>8.7/15 kV XLPE izoleli, tek damarlı, enlemesine ve boylamasına su geçirmez, alüminyum iletkenli kablolar</item>
+        <item>20.3/35 kV veya 20.8/36 kV XLPE izoleli, tek damarlı, enlemesine ve boylamasına su geçirmez, alüminyum iletkenli kablolar</item>
+        <item>3.6/6 kV XLPE izoleli,tek damarlı, yuvarlak alüminyum tel zırhlı, alüminyum iletkenli kablolar</item>
+        <item>5.8/10 kV (6/10 kV) XLPE izoleli, tek damarlı, yuvarlak alüminyum tel zırhlı, alüminyum iletkenli kablolar</item>
+        <item>8.7/15 kV XLPE izoleli, tek damarlı, yuvarlak alüminyum tel zırhlı, alüminyum iletkenli kablolar</item>
+        <item>20.3/35 kV veya 20.8/36 kV XLPE izoleli, tek damarlı, yuvarlak alüminyum tel zırhlı, alüminyum iletkenli kablolar</item>
+        <item>3.6/6 kV XLPE izoleli, üç damarlı, alüminyum iletkenli kablolar</item>
+        <item>5.8/10 kV (6/10 kV) veya 6.35/11 kV XLPE izoleli, üç damarlı, alüminyum iletkenli kablolar</item>
+        <item>8.7/15 kV XLPE izoleli, üç damarlı, alüminyum iletkenli kablolar</item>
+        <item>20.3/35 kV veya 20.8/36 kV XLPE izoleli, üç damarlı, alüminyum iletkenli kablolar</item>
+        <item>3.6/6 kV XLPE izoleli, yassı çelik tel zırhlı, üç damarlı, alüminyum iletkenli kablolar</item>
+        <item>5.8/10 kV (6/10 kV) XLPE izoleli, yassı çelik tel zırhlı, üç damarlı, alüminyum iletkenli kablolar</item>
+        <item>8.7/15 kV XLPE izoleli, yassı çelik tel zırhlı, üç damarlı, alüminyum iletkenli kablolar</item>
+        <item>20.3/35 kV veya 20.8/36 kV XLPE izoleli, yassı çelik tel zırhlı, üç damarlı, alüminyum iletkenli kablolar</item>
+        <item>3.6/6 kV XLPE izoleli, yuvarlak çelik tel zırhlı, üç damarlı, alüminyum iletkenli kablolar</item>
+        <item>5.8/10 kV (6/10 kV) veya 6.35/11 kV XLPE izoleli, yuvarlak çelik tel zırhlı, üç damarlı, alüminyum iletkenli kablolar</item>
+        <item>8.7/15 kV XLPE izoleli, yuvarlak çelik tel zırhlı, üç damarlı, alüminyum iletkenli kablolar</item>
+        <item>3.6/6 kV XLPE izoleli, çift kat çelik bant zırhlı, üç damarlı, alüminyum iletkenli kablolar</item>
+        <item>5.8/10 kV (6/10 kV) veya 6.35/11 kV XLPE izoleli, çift kat çelik bant zırhlı, üç damarlı, alüminyum iletkenli kablolar</item>
+        <item>8.7/15 kV XLPE izoleli, çift kat çelik bant zırhlı, üç damarlı, alüminyum iletkenli kablolar</item>
+        <item>20.3/35 kV veya 20.8/36 kV XLPE izoleli, çift kat çelik bant zırhlı, üç damarlı, alüminyum iletkenli kablolar</item>
+
+        <!-- EIGHT -->
+        <item>Yüksek Gerilim Kabloları</item>
+        <item>40/69 kV XLPE izoleli, tek damarlı, enlemesine ve boylamasına su geçirmez, bakır iletkenli kablolar</item>
+        <item>89/154 kV XLPE izoleli, tek damarlı, enlemesine ve boylamasına su geçirmez, bakır iletkenli kablolar</item>
+        <item>40/69 kV XLPE izoleli, tek damarlı, enlemesine ve boylamasına su geçirmez, alüminyum iletkenli kablolar</item>
+        <item>89/154 kV XLPE izoleli, tek damarlı, enlemesine ve boylamasına su geçirmez, alüminyum iletkenli kablolar</item>
+
+        <!--NINETH -->
+        <item>Alüminyum İletken</item>
+        <item>Alüminyum İletken Özellikleri</item>
+        <item>AAC Örgülü alüminyum iletken Amerikan ölçüleri ASTM B231 / B231M</item>
+        <item>AAC Örgülü alüminyum iletken Kanada ölçüleri CSA C 49</item>
+        <item>ACSR Örgülü alüminyum iletken Amerikan ölçüleri ASTM B 232/B 232M</item>
+        <item>ACSR Örgülü alüminyum iletken Kanada ölçüleri CSA C 49</item>
+
+        <!-- TENTH -->
+
+        <item>Aer Kablolar</item>
+        <item>0.6/1kV PE izoleli, alüminyum iletkenli, çıplak askı telli enerji kabloları</item>
+        <!-- ELEVEN -->
+
+        <item>Fiber Optikli Koruma İletkeni(OPGW)</item>
+        <item>Fiber optikli koruma iletkeni (OPGW-95)</item>
+        <item>Fiber optikli koruma iletkeni (OPGW- 127-1)</item>
+        <item>Fiber optikli koruma iletkeni (OPGW-127-2)</item>
+        <item>Fiber optikli koruma iletkeni Özellikler (OPGW)</item>
+
+        <!-- TWELVE -->
+        <item>Bakır Filmaşin</item>
+        <!-- THIRTEEN -->
+
+        <item>Bakır İletken</item>
+        <item>Havai hatlar için örgülü bakır iletken</item>
+        <item>Tavlanmış elektrolitik bakır iletken</item>
+        <!-- FOURTEEN -->
+        <item>Alüminyum Filmaşin</item>
+        <!-- FIFTEEN -->
+        <item>Teknik Bilgiler</item>
+        <!-- SIXTEEN-->
+        <item>H05V-U, H07V-U, H07V-R (NYA), CU/PVC</item>
+
+
     </string-array>
 
 

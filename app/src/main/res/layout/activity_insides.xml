@@ -16,5 +16,17 @@
         android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
         android:divider="#fff"
         android:dividerHeight="1dp"></ExpandableListView>
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/list_item2"
+        android:visibility="invisible"
+        android:dividerHeight="5dp"
+        android:background="#FFF5EE"
+        android:listSelector="@drawable/listview_selector">
+
+    </ListView>
+
+
 
 </android.support.constraint.ConstraintLayout>
