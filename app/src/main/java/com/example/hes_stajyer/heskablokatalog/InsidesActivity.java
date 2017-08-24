@@ -1646,6 +1646,7 @@ public class InsidesActivity extends AppCompatActivity {
                     mIntent.putExtra(page, pgNumber);
                     startActivity(mIntent);
                 }
+                //add codes
 
 
 
