@@ -218,7 +218,39 @@
         <!-- FIFTEEN -->
         <item>Teknik Bilgiler</item>
         <!-- SIXTEEN-->
-        <item>H05V-U, H07V-U, H07V-R (NYA), CU/PVC</item>
+        <!-- PRODUCTION CODES -->
+
+
+        <!--TESİSAT KABLOLARI P.C-->
+        <item>H05V-U, H07V-U, H07V-R ( NYA ), CU/PVC</item>
+        <item>H05V-K, H07V-K, ( NYAF ), CU/PVC</item>
+        <item>NYM, CU / PVC / PVC, NVV</item>
+        <item>H03VV-F, H05VV-F, NYMH-rd, CU / PVC / PVC</item>
+        <item>H07VVH6-F</item>
+        <item>H03VVH2-F, H05VVH2-F</item>
+
+        <!--PVC İZOLELİ ALÇAK GERİLİM KABLOLARI P.C-->
+        <item>YVV-U, YVV-R, CU / PVC / PVC , NYY</item>
+        <item>YVV-U, YVV-R, CU / PVC / PVC , NYY</item>
+        <item>YVV-U, YVV-R, CU / PVC / PVC , NYY</item>
+        <item>YVV-R, CU / PVC / PVC , NYY</item>
+        <item>YVV-U, YVV-R, CU / PVC / PVC , NYY</item>
+        <item>YVV-U, YVV-R, CU / PVC / PVC , NYY</item>
+        <item>YVV-U, YVV-R, CU / PVC / PVC , NYY</item>
+        <item>YVCV-U, YVCV-R, CU / PVC / SC / PVC , NYCY</item>
+        <item>YVCV-U, YVCV-R, CU / PVC / SC / PVC , NYCY</item>
+        <item>YVCV-U, YVCV-R, CU / PVC / SC / PVC / , NYCY</item>
+        <item>YVCV-U, YVCV-R, CU / PVC / SC / PVC / , NYCY</item>
+        <item>YVCV-U, YVCV-R, CU / PVC / SC / PVC, NYCY</item>
+        <item>YVCV-U, YVCV-R, CU / PVC / SC / PVC / , NYCY</item>
+
+        <item>YVCV-U, CU / PVC / SC/PVC, NYCY</item>
+        <item>YVZ2V-R, CU / PVC / SWA / PVC , NYRY</item>
+        <item>YVZ2V-U, YVZ2V-R, CU / PVC / SWA / PVC , NYRY</item>
+        <item>YYVZ2V-U, YVZ2V-R, CU / PVC / SWA / PVC, NYRY</item>
+        <item>YVZ2V-R, CU / PVC / SWA / PVC , NYRY</item>
+
+
 
 
     </string-array>

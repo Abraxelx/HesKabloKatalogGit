@@ -90,7 +90,7 @@ public class InsidesActivity extends AppCompatActivity {
                     //Child Click Event
                     mIntent = new Intent(InsidesActivity.this, MainActivity.class);
                     String page = "page";
-                    int pgNumber = 0;
+                    int pgNumber;
 
                     //01.TESİSAT KABLOLARI
                     if (group_position == 0) {
@@ -784,7 +784,7 @@ public class InsidesActivity extends AppCompatActivity {
 
         final MenuInflater[] inflater = {getMenuInflater()};
         inflater[0].inflate(R.menu.insides_search,menu);
-        adapter = adapter.createFromResource(InsidesActivity.this,R.array.insides_suggetions,android.R.layout.simple_list_item_1);
+        adapter = ArrayAdapter.createFromResource(InsidesActivity.this,R.array.insides_suggetions,android.R.layout.simple_list_item_1);
         listView.setAdapter(adapter);
         final SearchView searchView = (SearchView) menu.findItem(R.id.action_search_insides).getActionView();
 
@@ -818,72 +818,159 @@ public class InsidesActivity extends AppCompatActivity {
                 String name = listView.getItemAtPosition(position).toString();
                 view.setSelected(true);
 
-                if(name.equals("Tesisat Kabloları") || name.equals("PVC İzoleli, kılıfsız, tek damarlı, bakır iletkenli kablolar")|| name.equals("H05V-U, H07V-U, H07V-R (NYA), CU/PVC"))//TESİSAT KABLOLARI
+                if(name.equals("Tesisat Kabloları") || name.equals("PVC İzoleli, kılıfsız, tek damarlı, bakır iletkenli kablolar")|| name.equals("H05V-U, H07V-U, H07V-R ( NYA ), CU/PVC"))//TESİSAT KABLOLARI
                 {
                     pgNumber = 5;
                     mIntent.putExtra(page, pgNumber);
                     startActivity(mIntent);
                 }
-                else if(name.equals("PVC İzoleli, kılıfsız, çok damarlı, bakır iletkenli tesisat kabloları"))
+                else if(name.equals("H05V-K, H07V-K, ( NYAF ), CU/PVC"))
+                {
+                    pgNumber = 6;
+                    mIntent.putExtra(page, pgNumber);
+                    startActivity(mIntent);
+                }
+                else if(name.equals("PVC İzoleli, kılıfsız, çok damarlı, bakır iletkenli tesisat kabloları") || name.equals("NYM, CU / PVC / PVC, NVV"))
                 {
                     pgNumber = 7;
                     mIntent.putExtra(page, pgNumber);
                     startActivity(mIntent);
                 }
-                else if(name.equals("PVC İzoleli, yassı bükülgen, bakır iletkenli kablolar"))
+                else if(name.equals("H03VV-F, H05VV-F, NYMH-rd, CU / PVC / PVC"))
+                {
+                    pgNumber = 8;
+                    mIntent.putExtra(page, pgNumber);
+                    startActivity(mIntent);
+                }
+                else if(name.equals("PVC İzoleli, yassı bükülgen, bakır iletkenli kablolar")|| name.equals("H07VVH6-F"))
                 {
                     pgNumber = 9;
                     mIntent.putExtra(page, pgNumber);
                     startActivity(mIntent);
                 }
-                else if(name.equals("PVC İzoleli Alçak Gerilim Kabloları") || name.equals("0.6/1 kV PVC izoleli, tek damarlı, bakır iletkenli kablolar"))
+                else if(name.equals("H03VVH2-F, H05VVH2-F"))
+                {
+                    pgNumber = 10;
+                    mIntent.putExtra(page, pgNumber);
+                    startActivity(mIntent);
+                }
+
+                else if(name.equals("PVC İzoleli Alçak Gerilim Kabloları") || name.equals("0.6/1 kV PVC izoleli, tek damarlı, bakır iletkenli kablolar")|| name.equals("YVV-U, YVV-R, CU / PVC / PVC , NYY"))
                 {
                     pgNumber = 11;
                     mIntent.putExtra(page, pgNumber);
                     startActivity(mIntent);
                 }
-                else if(name.equals("0.6/1 kV PVC izoleli, çok damarlı, bakır iletkenli kablolar"))
+                else if(name.equals("0.6/1 kV PVC izoleli, çok damarlı, bakır iletkenli kablolar")||name.equals("YVV-U, YVV-R, CU / PVC / PVC , NYY"))
                 {
                     pgNumber = 12;
                     mIntent.putExtra(page, pgNumber);
                     startActivity(mIntent);
                 }
-                else if(name.equals("0.6/1 kV PVC izoleli, bakır iletkenli, kumanda kabloları"))
+                else if(name.equals("YVV-U, YVV-R, CU / PVC / PVC , NYY"))
+                {
+                    pgNumber = 13;
+                    mIntent.putExtra(page, pgNumber);
+                    startActivity(mIntent);
+                }
+
+                else if(name.equals("YVV-R, CU / PVC / PVC , NYY"))
+                {
+                    pgNumber = 14;
+                    mIntent.putExtra(page, pgNumber);
+                    startActivity(mIntent);
+                }
+                else if(name.equals("YVV-U, YVV-R, CU / PVC / PVC , NYY"))
+                {
+                    pgNumber = 15;
+                    mIntent.putExtra(page, pgNumber);
+                    startActivity(mIntent);
+                }
+                else if(name.equals("0.6/1 kV PVC izoleli, bakır iletkenli, kumanda kabloları")||name.equals("YVV-U, YVV-R, CU / PVC / PVC , NYY"))
                 {
                     pgNumber = 16;
                     mIntent.putExtra(page, pgNumber);
                     startActivity(mIntent);
                 }
-                else if(name.equals("0.6/1 kV PVC izoleli, konsantrik iletkenli, tek damarlı, bakır iletkenli kablolar"))
+                else if(name.equals("YVV-U, YVV-R, CU / PVC / PVC , NYY"))
+                {
+                    pgNumber = 17;
+                    mIntent.putExtra(page, pgNumber);
+                    startActivity(mIntent);
+                }
+
+                else if(name.equals("0.6/1 kV PVC izoleli, konsantrik iletkenli, tek damarlı, bakır iletkenli kablolar")|| name.equals("YVCV-U, YVCV-R, CU / PVC / SC / PVC , NYCY"))
                 {
                     pgNumber = 18;
                     mIntent.putExtra(page, pgNumber);
                     startActivity(mIntent);
                 }
-                else if(name.equals("0.6/1 kV PVC izoleli, konsantrik iletkenli, çok damarlı, bakır iletkenli kablolar"))
+                else if(name.equals("0.6/1 kV PVC izoleli, konsantrik iletkenli, çok damarlı, bakır iletkenli kablolar")||name.equals("YVCV-U, YVCV-R, CU / PVC / SC / PVC , NYCY"))
                 {
                     pgNumber = 19;
                     mIntent.putExtra(page, pgNumber);
                     startActivity(mIntent);
                 }
-                else if(name.equals("0.6/1 kV PVC izoleli, konsantrik iletkenli, bakır iletkenli, kumanda kabloları"))
+                else if(name.equals("YVCV-U, YVCV-R, CU / PVC / SC / PVC / , NYCY"))
+                {
+                    pgNumber = 20;
+                    mIntent.putExtra(page, pgNumber);
+                    startActivity(mIntent);
+                }
+                else if(name.equals("YVCV-U, YVCV-R, CU / PVC / SC / PVC / , NYCY"))
+                {
+                    pgNumber = 21;
+                    mIntent.putExtra(page, pgNumber);
+                    startActivity(mIntent);
+                }
+
+                else if(name.equals("0.6/1 kV PVC izoleli, konsantrik iletkenli, bakır iletkenli, kumanda kabloları")|| name.equals("YVCV-U, YVCV-R, CU / PVC / SC / PVC, NYCY"))
                 {
                     pgNumber = 22;
                     mIntent.putExtra(page, pgNumber);
                     startActivity(mIntent);
                 }
-                else if(name.equals("0.6/1 kV PVC izoleli, yuvarlak çelik tel zırhlı, tek damarlı, bakır iletkenli kablolar"))
+                else if(name.equals("YVCV-U, YVCV-R, CU / PVC / SC / PVC / , NYCY"))
+                {
+                    pgNumber = 23;
+                    mIntent.putExtra(page, pgNumber);
+                    startActivity(mIntent);
+                }
+                else if(name.equals("YVCV-U, CU / PVC / SC/PVC, NYCY"))
+                {
+                    pgNumber = 24;
+                    mIntent.putExtra(page, pgNumber);
+                    startActivity(mIntent);
+                }
+
+
+
+
+                else if(name.equals("0.6/1 kV PVC izoleli, yuvarlak çelik tel zırhlı, tek damarlı, bakır iletkenli kablolar")||name.equals("YVZ2V-R, CU / PVC / SWA / PVC , NYRY"))
                 {
                     pgNumber = 25;
                     mIntent.putExtra(page, pgNumber);
                     startActivity(mIntent);
                 }
-                else if(name.equals("0.6/1 kV PVC izoleli, yuvarlak çelik tel zırhlı, çok damarlı, bakır iletkenli kablolar"))
+                else if(name.equals("0.6/1 kV PVC izoleli, yuvarlak çelik tel zırhlı, çok damarlı, bakır iletkenli kablolar")|| name.equals("YVZ2V-U, YVZ2V-R, CU / PVC / SWA / PVC , NYRY"))
                 {
                     pgNumber = 26;
                     mIntent.putExtra(page, pgNumber);
                     startActivity(mIntent);
                 }
+                else if(name.equals("YYVZ2V-U, YVZ2V-R, CU / PVC / SWA / PVC, NYRY"))
+                {
+                    pgNumber = 27;
+                    mIntent.putExtra(page, pgNumber);
+                    startActivity(mIntent);
+                }
+                else if(name.equals("YVZ2V-R, CU / PVC / SWA / PVC , NYRY"))
+                {
+                    pgNumber = 28;
+                    mIntent.putExtra(page, pgNumber);
+                    startActivity(mIntent);
+                }
+                //////////////////
                 else if(name.equals("0.6/1 kV PVC izoleli, yuvarlak çelik tel zırhlı, çok damarlı, bakır iletkenli kumanda kabloları"))
                 {
                     pgNumber = 30;
@@ -1646,7 +1733,7 @@ public class InsidesActivity extends AppCompatActivity {
                     mIntent.putExtra(page, pgNumber);
                     startActivity(mIntent);
                 }
-                //add codess
+                //add codesss
 
 
 
