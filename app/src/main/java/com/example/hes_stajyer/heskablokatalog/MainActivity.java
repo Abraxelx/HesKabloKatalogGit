@@ -130,10 +130,11 @@ public class MainActivity extends AppCompatActivity
                 //.enableAntialiasing(true)
                 .defaultPage(mCurrentPage)
                 .onRender(new OnRenderListener() {
-            @Override
-            public void onInitiallyRendered(int nbPages, float pageWidth, float pageHeight) {
-                pdfView.fitToWidth(mCurrentPage);
-            }
+                    @Override
+                    public void onInitiallyRendered(int nbPages) {
+                        pdfView.fitToWidth(mCurrentPage);
+                    }
+
         })
                 .onPageChange(new OnPageChangeListener() {
             @Override
